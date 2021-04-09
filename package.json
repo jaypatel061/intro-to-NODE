@@ -4,7 +4,7 @@
   "description": "simple WebApplication",
   "main": "httpServer.js",
   "scripts": {
-    "start":"node httpServer.js",
+    "start": "node httpServer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/jaypatel061/intro-to-NODE/issues"
   },
-  "homepage": "https://github.com/jaypatel061/intro-to-NODE#readme"
+  "homepage": "https://github.com/jaypatel061/intro-to-NODE#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "url": "^0.11.0"
+  }
 }
