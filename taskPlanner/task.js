@@ -47,7 +47,7 @@ let server = http.createServer((req,res)=>{
     addTask.push(info);  
     let jsonData=JSON.stringify(addTask);
     //fs.writeFileSync("tasks.json",jsonData);
-    fs.writeFile("data.json",jsonData,{file:"a"},(err)=>{
+    fs.writeFile("tasks.json",jsonData,{file:"a"},(err)=>{
         if (!err){
             console.log("data store in a file");
         }
@@ -56,7 +56,7 @@ let server = http.createServer((req,res)=>{
     }
     else if (pathInfo=="/delete"){
         var data=url.parse(req.url, true).query;
-        let readFile=fs.readFileSync("data.json");
+        let readFile=fs.readFileSync("tasks.json");
         var y= JSON.parse(readFile);
        // var deleteArray=[];
         //deleteArray.push(y);
@@ -71,7 +71,7 @@ let server = http.createServer((req,res)=>{
               
         }
         let deleteData1 = JSON.stringify(y);
-        fs.writeFile("data.json",deleteData1,{file:"a"},(err)=>{
+        fs.writeFile("tasks.json",deleteData1,{file:"a"},(err)=>{
             if (!err){
                 console.log("File updated...");
             }
@@ -82,7 +82,7 @@ let server = http.createServer((req,res)=>{
     }
     
     else if(pathInfo=="/display"){
-        let readFile=fs.readFileSync("data.json");
+        let readFile=fs.readFileSync("tasks.json");
         var z= JSON.parse(readFile);
         let retrieveTableData=`
                                <table border ="1">
