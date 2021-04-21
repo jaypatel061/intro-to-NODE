@@ -60,11 +60,7 @@ app.post("/storeCDetails",(req,res)=>{
     let courseName = req.body.courseName;
     let description = req.body.courseDesc;
     let courseFee = req.body.courseFee;
-    /*
-    console.log(courseId);
-    console.log(courseName);
-    console.log(description);
-    console.log(courseFee); */
+ 
     let c1=new Course({_id:courseId,cname:courseName,cdesc:description,cfee:courseFee});
     c1.save((err1,result)=>{
         if(!err1){
